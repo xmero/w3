@@ -1,5 +1,3 @@
- <!-- eslint no-undef: "off"  -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +9,6 @@
     <style>
       .hidden { display: none; }
     </style>
- 
 </head>
 
 <body>
@@ -31,10 +28,10 @@
             <form  action="" method="POST" class="form-inline" role="form">
 
               <div class="form-group">
-                <input type="text" class="form-control" id="" placeholder="Input artist name...">
+                <input  class="input-lg" type="text" class="form-control" id="" placeholder="Input artist name...">
               </div>
 
-              <button type="submit" class="btn btn-primary">Search</button>
+              <button type="submit" class="btn-lg btn btn-primary">Search</button>
             </form>
         </div>
 
@@ -44,31 +41,29 @@
             <form action="" method="POST" class="form-inline" role="form">
 
               <div class="form-group">
-                <select name="" id="list-artists">
-                </select>
+                <select class="input-lg" name="" id="list-artists"></select>
               </div>
 
             </form>
         </div>
 
-                <div class="jumbotron hidden" id="select-album">
+        <div class="jumbotron hidden" id="select-album">
             <h3>Select an album...</h3>
             <form action="" method="POST" class="form-inline" role="form">
 
               <div class="form-group">
-                <select name="" id="list-albums"></select>
+                <select class="input-lg" name="" id="list-albums"></select>
               </div>
 
             </form>
         </div>
 
-
-         <div class="jumbotron hidden" id="select-song">
-            <h3>Select an album...</h3>
+        <div class="jumbotron hidden" id="select-track">
+            <h3>Select a track...</h3>
             <form action="" method="POST" class="form-inline" role="form">
 
               <div class="form-group">
-                <ul name="" id="list-songs"></ul>
+                <ul id="list-tracks"></ul>
               </div>
 
             </form>

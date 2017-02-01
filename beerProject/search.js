@@ -10,12 +10,17 @@ $('#search-beer form').on('submit', function (e) {
     url: urlFilled
   })
         .done(function (response) {
-          var listBeer = response
-          var optionsBeer = listBeer.map(function (elem) {
-            return "<option value='" + elem.id + "'>" + elem.name + '</option>'
+          var listBeers = response
+          var tplOption = "<option value='<%BEER-ID%>'><%BEER-NAME%></option>"
+          var optionsBeers = listBeers.map(function (beer) {
+            var currentOption = tplOption.replace('<%BEER-ID%>', beer.id)
+            currentOption = currentOption.replace('<%BEER-NAME%>', beer.name)
+            return currentOption
           })
-          $('#list-beers').html(optionsBeer.join(''))
+          optionsBeers.unshift('<option disabled selected>Select a Beer</option>')
+          $('#list-beers').html(optionsBeers.join(''))
           $('#select-beer').removeClass('hidden')
+          $('#show-details').addClass('hidden')
         })
 })
 
@@ -31,10 +36,16 @@ $('#select-beer form').on('change', function (e) {
         .done(function (response) {
           console.log(response)
           var displayDetail = response
-          var detailBeer = Object.keys(displayDetail).map(function (elem) {
-            return "<li value='" + elem + "'>" + elem + ' : ' + displayDetail[elem] + '</li>'
-          })
-          $('#list-details').html(detailBeer.join(''))
+          // var detailBeer = Object.keys(displayDetail).map(function (elem) {
+          //   return "<li value='" + elem + "'>" + elem + ' : ' + displayDetail[elem] + '</li>'
+          // })
+          var defaultImg = 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSsqPa2ecenjefSjqHWav-B-u59xZjQGVnEst_406IR3XmELfmSKg'
+          var displayImg = displayDetail.labels ? displayDetail.labels['medium'] : defaultImg
+
+          $('#list-details-name').html(displayDetail['name'])
+          $('#list-details-abv').html('Alcohol by volume: ' + displayDetail['abv'])
+          $('#list-details-description').html(displayDetail['description'])
+          $('#list-details-label').attr('src', displayImg)
           $('#show-details').removeClass('hidden')
         })
 })
