@@ -19,7 +19,7 @@ $('#search-artists form').on('submit', function (e) {
         })
 })
 
-$('#select-artist form').on('submit', function (e) {
+$('#select-artist form').on('change', function (e) {
   e.preventDefault()
   var urlSearch = 'https://api.spotify.com/v1/artists/<%ID-ARTIST%>/albums'
   var valueSearched = $(this).find('select').val()
@@ -48,7 +48,6 @@ $('#select-album form').on('change', function (e) {
     url: urlFilled
   })
     .done(function (response) {
-      // console.log(response)
       var listSongs = response.items
       var optionSongs = listSongs.map(function (elem) {
         return "<li> <a href='" + elem.preview_url + "'>" + elem.name + '</a></li>'

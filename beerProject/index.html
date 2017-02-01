@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>BeerFinder</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <style>
@@ -17,21 +17,14 @@
 <body>
     <div class="container">
         <div class="header clearfix">
-        <!--     <nav>
-                <ul class="nav nav-pills pull-right">
-                    <li role="presentation" class="active"><a href="#">Home</a></li>
-                    <li role="presentation"><a href="#">About</a></li>
-                    <li role="presentation"><a href="#">Contact</a></li>
-                </ul>
-            </nav> -->
-            <h3 class="text-muted">Spotify Finder 😎</h3>
+            <h3 class="text-muted">Beer Finder 😎</h3>
         </div>
-        <div class="jumbotron" id="search-artists">
-            <h3>Search for an artist...</h3>
+        <div class="jumbotron" id="search-beer">
+            <h3>Search for a Beer</h3>
             <form  action="" method="POST" class="form-inline" role="form">
 
               <div class="form-group">
-                <input type="text" class="form-control" id="" placeholder="Input artist name...">
+                <input type="text" class="form-control" id="" placeholder="Enter beer name...">
               </div>
 
               <button type="submit" class="btn btn-primary">Search</button>
@@ -39,40 +32,31 @@
         </div>
 
 
-        <div class="jumbotron hidden" id="select-artist">
-            <h3>Select an artist...</h3>
+        <div class="jumbotron hidden" id="select-beer">
+            <h3>Select a Beer...</h3>
             <form action="" method="POST" class="form-inline" role="form">
 
               <div class="form-group">
-                <select name="" id="list-artists">
+                <select name="" id="list-beers">
                 </select>
               </div>
 
             </form>
         </div>
 
-                <div class="jumbotron hidden" id="select-album">
-            <h3>Select an album...</h3>
+
+                <div class="jumbotron hidden" id="show-details">
+            <h3>Selected Beer Details</h3>
             <form action="" method="POST" class="form-inline" role="form">
 
               <div class="form-group">
-                <select name="" id="list-albums"></select>
+                <ul name="" id="list-details"></ul>
               </div>
 
             </form>
         </div>
 
 
-         <div class="jumbotron hidden" id="select-song">
-            <h3>Select an album...</h3>
-            <form action="" method="POST" class="form-inline" role="form">
-
-              <div class="form-group">
-                <ul name="" id="list-songs"></ul>
-              </div>
-
-            </form>
-        </div>
 
 
         <footer class="footer">
