@@ -5,8 +5,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>BeerFinder</title>
+    <title>Beender</title>
     <!-- Latest compiled and minified CSS -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <style>
       .hidden { display: none; }
@@ -15,11 +16,11 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container ">
         <div class="header clearfix">
-            <h3 class="text-muted">Beer Finder 😎</h3>
+            <h3 class="text-muted">Beender</h3>
         </div>
-        <div class="jumbotron" id="search-beer">
+        <div class="jumbotron " id="search-beer">
             <h3>Search for a Beer</h3>
             <form  action="" method="POST" class="form-inline" role="form">
 
@@ -27,12 +28,11 @@
                 <input type="text" class="form-control" id="" placeholder="Enter beer name...">
               </div>
 
-              <button type="submit" class="btn btn-primary">Search</button>
+              <button type="submit" class="btn btn-warning">GO!</button>
             </form>
-        </div>
 
-
-        <div class="jumbotron hidden" id="select-beer">
+            
+             <div class="hidden " id="select-beer">
             <h3>Select a Beer...</h3>
             <form action="" method="POST" class="form-inline" role="form">
 
@@ -43,24 +43,7 @@
 
             </form>
         </div>
-<!--- 
-
-                    <div class="">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right abv-display"></h4>
-                                <h4 id ="beer-name"></h4>
-                                <p id = "description"></p>
-                            </div>
-                    </div>
-
-
- -->
-
-
-
-
-
+        </div>
 
                 <div class="jumbotron hidden" id="show-details">
             <h3>Selected Beer Details</h3>
@@ -79,7 +62,7 @@
 
 
 
-        <footer class="footer">
+        <footer class="footer clearfix">
             <p>&copy; 2016 Company, Inc.</p>
         </footer>
     </div>
