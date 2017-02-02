@@ -25,3 +25,18 @@ The modules that are used to controll the html code are named ***controllers*** 
 
 ```$scope``` is used as a shared object (with properties) between the controller and the view. They both have acces of read/write and it is automatically updated. This way you can update variables in your html through the .js controller function.
 
+[Find all the ANGULAR DIRECTIVES](https://docs.angularjs.org/api/ng/directive)
+
+Basic commands: 
+
++ ng-repeat --- can apply filter/orderBy in it
++ ng-hide
++ ng-show
++ ng-model
+
+there are two kind of services: 
+
++ .service 
++ .factory : returns an object
+
+To get the API json we use the method ```$http.get(url)```
