@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>angularStepbyStep</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 </head>
 
@@ -14,31 +16,24 @@
         <h1>{{ sum() }}</h1>
     </div>  -->
     <div class="container" ng-controller="MySecondController">
+        <h3>Full list</h3>
         <ul>
             <li ng-repeat="name in students">{{name}}</li>
         </ul>
+        <div class="container" ng-controller="studentManager">
+            <div class="filtered-info">
+                <form>
+                    <p>Enter new student:</p>
+                    <input ng-model="newStudent" type="text" placeholder="Introduce a Name" autofocus />
+                    <button class="btn btn-success" ng-click="insertStudent()">Insert</button>
+                    <p>Delete a student:</p>
+                    <input ng-model="delStudent" type="text" placeholder="Introduce a Name" autofocus />
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
-<div class="container" ng-controller="studentsFilter">
-    <div class="filtered-info">
-        <form>
-            <p>Filter by Name: {{ query }}</p>
-            <input ng-model="query" type="text" placeholder="Introduce a Name" autofocus />
-            <p>Order by</p>
-            <select ng-model="customOrder">
-                <option value="name">name</option>
-                <option value="mail">mail</option>
-                <option value="github">github</option>
-            </select>
-        </form>
-        <h3>Full list</h3>
-        <ul>
-            <li ng-repeat="student in students | filter : {name : query} | orderBy: customOrder">
-                Name: <strong>{{student.name}}</strong> Email: <em>{{student.mail}}</em> Git: <em>{{student.github}}</em>
-            </li>
-        </ul>
-    </div>
-</div>
 <script src="app.js"></script>
 
 </html>
