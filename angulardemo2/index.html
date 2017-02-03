@@ -8,20 +8,37 @@
 </head>
 
 <body>
-  <!--   <div class="container" ng-controller="MyFirstController">
+    <!--   <div class="container" ng-controller="MyFirstController">
     <input type="number" ng-model="op1">
     <input type="number" ng-model="op2">
         <h1>{{ sum() }}</h1>
     </div>  -->
-
     <div class="container" ng-controller="MySecondController">
-    <ul>
-      <li ng-repeat="name in students">{{name}}</li>
-    </ul>
-    </div> 
+        <ul>
+            <li ng-repeat="name in students">{{name}}</li>
+        </ul>
+    </div>
 </body>
-
-
+<div class="container" ng-controller="studentsFilter">
+    <div class="filtered-info">
+        <form>
+            <p>Filter by Name: {{ query }}</p>
+            <input ng-model="query" type="text" placeholder="Introduce a Name" autofocus />
+            <p>Order by</p>
+            <select ng-model="customOrder">
+                <option value="name">name</option>
+                <option value="mail">mail</option>
+                <option value="github">github</option>
+            </select>
+        </form>
+        <h3>Full list</h3>
+        <ul>
+            <li ng-repeat="student in students | filter : {name : query} | orderBy: customOrder">
+                Name: <strong>{{student.name}}</strong> Email: <em>{{student.mail}}</em> Git: <em>{{student.github}}</em>
+            </li>
+        </ul>
+    </div>
+</div>
 <script src="app.js"></script>
 
 </html>
