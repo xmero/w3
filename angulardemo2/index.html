@@ -16,19 +16,17 @@
         <h1>{{ sum() }}</h1>
     </div>  -->
     <div class="container" ng-controller="MySecondController">
+            <div class="container" ng-controller="studentManager">
         <h3>Full list</h3>
         <ul>
-            <li ng-repeat="name in students">{{name}}</li>
+            <li ng-repeat="name in students ">{{name}}<a  ng-click="deleteStudent($index)"> [Delete]</a> </li>
         </ul>
-        <div class="container" ng-controller="studentManager">
+
             <div class="filtered-info">
-                <form>
+                <form action="">
                     <p>Enter new student:</p>
                     <input ng-model="newStudent" type="text" placeholder="Introduce a Name" autofocus />
-                    <button class="btn btn-success" ng-click="insertStudent()">Insert</button>
-                    <p>Delete a student:</p>
-                    <input ng-model="delStudent" type="text" placeholder="Introduce a Name" autofocus />
-                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-success" ng-click="insertStudent(newStudent)">Insert</button>
                 </form>
             </div>
         </div>

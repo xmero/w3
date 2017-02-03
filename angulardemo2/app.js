@@ -25,8 +25,15 @@ myApp.controller("MySecondController", function($scope) {
 
 myApp.controller("studentManager", function($scope) {
 
-function insertStudent(name){
+$scope.insertStudent = function (name){
      $scope.students.push(name)
+     console.log($scope.students)
+     $scope.newStudent = ""
+}
+
+$scope.deleteStudent = function ( index){
+     $scope.students.splice(index,1)
+     console.log($scope.students)
 }
 })
 
